@@ -11,6 +11,8 @@ import styles from "../theme/defaultTheme.module.scss";
 import React from "react";
 import LevelContext from "./level.tsx";
 
+// Import this in the application's root
+
 const UIKitRoot: React.FC<{ children: React.ReactNode | React.ReactNode[] }> = (props) => {
   return (
     <div className={clippy(styles.theme, styles.level0, isMobileDevice() && styles.mobile)}>
