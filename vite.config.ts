@@ -23,15 +23,26 @@ export default defineConfig({
     libInjectCss(),
     dtsPlugin(),
   ],
+  publicDir: "lib/theme",
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.tsx"),
       formats: ["es"],
+      fileName: (format, fileName) => {
+        const extension = format === 'cjs' ? 'js' : 'mjs';
+        return `${fileName}.${extension}`;
+      },
     },
-    sourcemap: false,
+    copyPublicDir: true,
+    sourcemap: true,
     minify: true,
     rollupOptions: {
       external: ["react", "react/jsx-runtime", "react-router", "react-router-dom"],
+      jsx: "react-jsx",
+      treeshake: false,
+      output: {
+        preserveModules: true,
+      },
     },
   },
   css: {
@@ -40,5 +51,5 @@ export default defineConfig({
         api: "modern-compiler", // or "modern"
       },
     },
-  },
+  }
 });

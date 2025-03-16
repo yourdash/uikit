@@ -1,6 +1,6 @@
 {
   "name": "@yourdash/uikit",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "",
   "scripts": {
     "dev-compile": "vite build --watch",
@@ -10,15 +10,26 @@
   "keywords": [],
   "author": "Ewsgit",
   "license": "MIT",
-  "main": "dist/uikit.js",
-  "types": "dist/uikit.d.ts",
+  "files": [
+    "dist",
+    "lib"
+  ],
   "sideEffects": [
     "**/*.css"
   ],
   "type": "module",
   "exports": {
-    "./lib/theme/*": "lib/theme/*",
-    ".": "dist/uikit.js"
+    "./lib/theme/*": {
+      "default": "./dist/*"
+    },
+    "./themeValues.scss": {
+      "default": "./dist/themeValues.scss"
+    },
+    ".": {
+      "import": "./dist/src/index.mjs",
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.mjs"
+    }
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
@@ -41,6 +52,7 @@
     "react-dom": "^19.0.0",
     "react-router": "^7.2.0",
     "react-router-dom": "^7.2.0",
+    "sass-embedded": "^1.85.1",
     "vite-plugin-dts": "^4.5.3"
   },
   "peerDependencies": {
