@@ -3,6 +3,10 @@
  * YourDash is licensed under the MIT License. (https://mit.ewsgit.uk)
  */
 
+// Icons
+export { UKIcons } from "../lib/core/iconDictionary.js"
+export type { UKIconType } from "../lib/core/iconDictionary.js"
+
 // Components
 export { default as UKBox } from "../lib/components/box/UKBox.js";
 export { default as UKButton } from "../lib/components/button/UKButton.js";

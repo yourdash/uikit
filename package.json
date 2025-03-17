@@ -1,6 +1,6 @@
 {
   "name": "@yourdash/uikit",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "",
   "scripts": {
     "dev-compile": "vite build --watch",
@@ -19,8 +19,8 @@
   ],
   "type": "module",
   "exports": {
-    "./lib/theme/*": {
-      "default": "./dist/*"
+    "./lib/theme/themeValues.scss": {
+      "default": "./dist/themeValues.scss"
     },
     "./themeValues.scss": {
       "default": "./dist/themeValues.scss"
